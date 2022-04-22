@@ -30,4 +30,4 @@ data = [
 
 
 def Home(request):
-    return JsonResponse(data=data, safe=False)
+    return JsonResponse(data=data, safe=False, json_dumps_params={'ensure_ascii': False})

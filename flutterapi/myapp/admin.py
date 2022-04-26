@@ -1,5 +1,9 @@
 from django.contrib import admin
 from .models import Todolist
 
-admin.site.register(Todolist)
 
+class TodolistAddmin(admin.ModelAdmin):
+    list_display = ['id', 'title', 'detail']
+
+
+admin.site.register(Todolist, TodolistAddmin)

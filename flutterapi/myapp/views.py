@@ -1,5 +1,20 @@
 from django.shortcuts import render
 from django.http import JsonResponse
+from rest_framework.response import Response
+from rest_framework.decorator import api_view
+from rest_framework import status
+from .serializers import TodolistSerializer
+from .models import Todolist
+
+
+# GET data
+@api_view(['GET'])
+def all_todolist(request):
+    # ດຶງຂໍ່ມູນຈາກ model Todolist "SELECT * from todolist"
+    alltodolist = Todolist.objects.all()
+    serializer = TodolistSerializer(alltodolist, many=True)
+    return Response(serializer.data, status=status.HTTP_200_OK)
+
 
 data = [
     {

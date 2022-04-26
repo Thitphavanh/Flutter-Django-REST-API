@@ -5,4 +5,4 @@ from .models import Todolist
 class TodolistSerializer(serializers.ModelSerializer):
     class Meta:
         model = Todolist
-        fields = ('id', 'title', 'detail')
+        fields = ('id', 'title', 'detail')  # __all__

@@ -17,6 +17,17 @@ def all_todolist(request):
 
 
 
+# POST Data (save data to database)
+@api_view(['POST'])
+def post_todolist(request):
+    if request.method == 'POST':
+        serializer = TodolistSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_404_NOT_FOUND)
+
+
 data = [
     {
         "title": "Phenomenal",

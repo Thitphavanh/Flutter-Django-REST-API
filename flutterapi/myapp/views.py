@@ -16,7 +16,6 @@ def all_todolist(request):
     return Response(serializer.data, status=status.HTTP_200_OK)
 
 
-
 # POST Data (save data to database)
 @api_view(['POST'])
 def post_todolist(request):

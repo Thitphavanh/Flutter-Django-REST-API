@@ -1,4 +1,4 @@
-ວິທີການຕິດຕັ້ງ ການເຮັດ API, Username: admin, Password: hery18205208038
+ວິທີການຕິດຕັ້ງ ການເຮັດ API8
 
 pip -V
 
@@ -22,7 +22,9 @@ python manage.py runserver
 
 python manage.py migrate
 
-python manage.py createsuperuser
+python manage.py createsuperuser (Username: admin, Password: hery18205208038)
+
+python manage.py startapp (myapp)
 
 
 
